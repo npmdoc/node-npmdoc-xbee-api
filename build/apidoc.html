@@ -1,0 +1,1863 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/jankolkmeier/xbee-api"
+
+    >xbee-api (v0.5.2)</a>
+</h1>
+<h4>Node.js and Chrome communicate with XBee/ZigBee devices in API mode</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xbee-api">module xbee-api</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api.XBeeAPI">
+            function <span class="apidocSignatureSpan">xbee-api.</span>XBeeAPI
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xbee-api.</span>XBeeAPI.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xbee-api.</span>_frame_builder</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xbee-api.</span>_frame_parser</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xbee-api.</span>constants</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xbee-api.XBeeAPI">module xbee-api.XBeeAPI</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api.XBeeAPI.XBeeAPI">
+            function <span class="apidocSignatureSpan">xbee-api.</span>XBeeAPI
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api.XBeeAPI.super_">
+            function <span class="apidocSignatureSpan">xbee-api.XBeeAPI.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xbee-api.XBeeAPI.prototype">module xbee-api.XBeeAPI.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api.XBeeAPI.prototype.buildFrame">
+            function <span class="apidocSignatureSpan">xbee-api.XBeeAPI.prototype.</span>buildFrame
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api.XBeeAPI.prototype.canBuild">
+            function <span class="apidocSignatureSpan">xbee-api.XBeeAPI.prototype.</span>canBuild
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api.XBeeAPI.prototype.canParse">
+            function <span class="apidocSignatureSpan">xbee-api.XBeeAPI.prototype.</span>canParse
+            <span class="apidocSignatureSpan">(buffer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api.XBeeAPI.prototype.escape">
+            function <span class="apidocSignatureSpan">xbee-api.XBeeAPI.prototype.</span>escape
+            <span class="apidocSignatureSpan">(buffer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api.XBeeAPI.prototype.nextFrameId">
+            function <span class="apidocSignatureSpan">xbee-api.XBeeAPI.prototype.</span>nextFrameId
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api.XBeeAPI.prototype.parseFrame">
+            function <span class="apidocSignatureSpan">xbee-api.XBeeAPI.prototype.</span>parseFrame
+            <span class="apidocSignatureSpan">(rawFrame)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api.XBeeAPI.prototype.parseRaw">
+            function <span class="apidocSignatureSpan">xbee-api.XBeeAPI.prototype.</span>parseRaw
+            <span class="apidocSignatureSpan">(buffer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api.XBeeAPI.prototype.rawParser">
+            function <span class="apidocSignatureSpan">xbee-api.XBeeAPI.prototype.</span>rawParser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xbee-api._frame_builder">module xbee-api._frame_builder</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_builder.0">
+            function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>0
+            <span class="apidocSignatureSpan">(frame, builder)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_builder.1">
+            function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>1
+            <span class="apidocSignatureSpan">(frame, builder)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_builder.16">
+            function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>16
+            <span class="apidocSignatureSpan">(frame, builder)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_builder.17">
+            function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>17
+            <span class="apidocSignatureSpan">(frame, builder)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_builder.23">
+            function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>23
+            <span class="apidocSignatureSpan">(frame, builder)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_builder.33">
+            function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>33
+            <span class="apidocSignatureSpan">(frame, builder)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_builder.8">
+            function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>8
+            <span class="apidocSignatureSpan">(frame, builder)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_builder.9">
+            function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>9
+            <span class="apidocSignatureSpan">(frame, builder)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_builder.getFrameId">
+            function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>getFrameId
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_builder.nextFrameId">
+            function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>nextFrameId
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>frameId</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xbee-api._frame_parser">module xbee-api._frame_parser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.0">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>0
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.1">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>1
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.128">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>128
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.129">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>129
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.130">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>130
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.131">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>131
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.136">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>136
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.137">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>137
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.138">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>138
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.139">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>139
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.144">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>144
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.145">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>145
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.146">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>146
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.148">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>148
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.149">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>149
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.151">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>151
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.16">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>16
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.161">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>161
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.17">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>17
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.23">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>23
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.8">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>8
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.9">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>9
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.ParseIOSamplePayload">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>ParseIOSamplePayload
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.Recieved16BitPacketIO">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>Recieved16BitPacketIO
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xbee-api._frame_parser.parseNodeIdentificationPayload">
+            function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>parseNodeIdentificationPayload
+            <span class="apidocSignatureSpan">(frame, reader, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xbee-api" id="apidoc.module.xbee-api">module xbee-api</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api.XBeeAPI" id="apidoc.element.xbee-api.XBeeAPI">
+        function <span class="apidocSignatureSpan">xbee-api.</span>XBeeAPI
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function XBeeAPI(options) {
+  events.EventEmitter.call(this);
+  options = options || {};
+  options.__proto__ = _options;
+  this.options = options;
+
+  this.parseState = {
+    buffer: Buffer.alloc(128),
+    offset: 0,         // Offset in buffer
+    length: 0,         // Packet Length
+    total: 0,          // To test Checksum
+    checksum: 0x00,    // Checksum byte
+    b: 0x00,           // Working byte
+    escape_next: false,// For escaping in AP=2
+    waiting: true
+  };
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## GETTING STARTED
+Install the module with: **[npm](https://npmjs.org/) install xbee-api**
+
+```javascript
+var xbee_api = require(&#x27;xbee-api&#x27;);
+var C = xbee_api.constants;
+var xbeeAPI = new xbee_api.<span class="apidocCodeKeywordSpan">XBeeAPI</span>();
+
+// Something we might want to send to an XBee...
+var frame_obj = {
+  type: C.FRAME_TYPE.AT_COMMAND,
+  command: &#x22;NI&#x22;,
+  commandParameter: [],
+};
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xbee-api.XBeeAPI" id="apidoc.module.xbee-api.XBeeAPI">module xbee-api.XBeeAPI</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api.XBeeAPI.XBeeAPI" id="apidoc.element.xbee-api.XBeeAPI.XBeeAPI">
+        function <span class="apidocSignatureSpan">xbee-api.</span>XBeeAPI
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function XBeeAPI(options) {
+  events.EventEmitter.call(this);
+  options = options || {};
+  options.__proto__ = _options;
+  this.options = options;
+
+  this.parseState = {
+    buffer: Buffer.alloc(128),
+    offset: 0,         // Offset in buffer
+    length: 0,         // Packet Length
+    total: 0,          // To test Checksum
+    checksum: 0x00,    // Checksum byte
+    b: 0x00,           // Working byte
+    escape_next: false,// For escaping in AP=2
+    waiting: true
+  };
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## GETTING STARTED
+Install the module with: **[npm](https://npmjs.org/) install xbee-api**
+
+```javascript
+var xbee_api = require(&#x27;xbee-api&#x27;);
+var C = xbee_api.constants;
+var xbeeAPI = new xbee_api.<span class="apidocCodeKeywordSpan">XBeeAPI</span>();
+
+// Something we might want to send to an XBee...
+var frame_obj = {
+  type: C.FRAME_TYPE.AT_COMMAND,
+  command: &#x22;NI&#x22;,
+  commandParameter: [],
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api.XBeeAPI.super_" id="apidoc.element.xbee-api.XBeeAPI.super_">
+        function <span class="apidocSignatureSpan">xbee-api.XBeeAPI.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xbee-api.XBeeAPI.prototype" id="apidoc.module.xbee-api.XBeeAPI.prototype">module xbee-api.XBeeAPI.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api.XBeeAPI.prototype.buildFrame" id="apidoc.element.xbee-api.XBeeAPI.prototype.buildFrame">
+        function <span class="apidocSignatureSpan">xbee-api.XBeeAPI.prototype.</span>buildFrame
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">buildFrame = function (frame) {
+  assert(frame, &#x27;Frame parameter must be a frame object&#x27;);
+
+  var packet = Buffer.alloc(256); // Packet buffer
+  var payload = packet.slice(3); // Reference the buffer past the header
+  var builder = new BufferBuilder(payload);
+
+  if(!frame_builder[frame.type])
+    throw new Error(&#x27;This library does not implement building the %d frame type.&#x27;, frame.type);
+
+  // Let the builder fill the payload
+  frame_builder[frame.type](frame, builder);
+
+  // Calculate &#x26; Append Checksum
+  var checksum = 0;
+  for (var i = 0; i &#x3c; builder.length; i++) checksum += payload[i];
+  builder.appendUInt8(255 - (checksum % 256));
+
+  // Get just the payload
+  payload = payload.slice(0, builder.length);
+
+  // Build the header at the start of the packet buffer
+  builder = new BufferBuilder(packet);
+  builder.appendUInt8(C.START_BYTE);
+  builder.appendUInt16BE(payload.length - 1); // Sans checksum
+
+  // Get the header and payload as one contiguous buffer
+  packet = packet.slice(0, builder.length + payload.length);
+
+  // Escape the packet, if needed
+  return this.options.api_mode === 2 ? this.escape(packet) : packet;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Something we might want to send to an XBee...
+var frame_obj = {
+  type: C.FRAME_TYPE.AT_COMMAND,
+  command: &#x22;NI&#x22;,
+  commandParameter: [],
+};
+console.log(xbeeAPI.<span class="apidocCodeKeywordSpan">buildFrame</span>(frame_obj));
+// &#x3c;Buffer 7e 00 04 08 01 4e 49 5f&#x3e;
+
+
+// Something we might receive from an XBee...
+var raw_frame = new Buffer([
+	0x7E, 0x00, 0x13, 0x97, 0x55, 0x00, 0x13, 0xA2, 0x00, 0x40, 0x52, 0x2B,
+	0xAA, 0x7D, 0x84, 0x53, 0x4C, 0x00, 0x40, 0x52, 0x2B, 0xAA, 0xF0
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api.XBeeAPI.prototype.canBuild" id="apidoc.element.xbee-api.XBeeAPI.prototype.canBuild">
+        function <span class="apidocSignatureSpan">xbee-api.XBeeAPI.prototype.</span>canBuild
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">canBuild = function (type) {
+  return type in frame_builder;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api.XBeeAPI.prototype.canParse" id="apidoc.element.xbee-api.XBeeAPI.prototype.canParse">
+        function <span class="apidocSignatureSpan">xbee-api.XBeeAPI.prototype.</span>canParse
+        <span class="apidocSignatureSpan">(buffer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">canParse = function (buffer) {
+  var type = buffer.readUInt8(3);
+  return type in frame_parser;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+In the following a documentation of all class methods.
+
+#### xbeeAPI.buildFrame(frame)
+Returns an API frame (buffer) created from the passed frame object. See ***Creating frames from objects to write to the XBee***
+for details on how these passed objects are specified.
+
+#### xbeeAPI.<span class="apidocCodeKeywordSpan">canParse</span>(buffer)
+Returns whether the library implements a parser for the frame contained in the provided buffer. The buffer only needs to contain
+ up to the frame type segment to determine if it can be parsed, but `parseFrame()` will need a complete frame.
+
+#### xbeeAPI.parseFrame(buffer)
+Parses and returns a frame object from the buffer passed. Note that the buffer must be a complete frame, starting with the start
+ byte and ending with the checksum byte. See ***Objects created from received API Frames*** for details on how the retured objects
+ are specified.
+
+#### xbeeAPI.rawParser()
+Returns a parser function with the profile `function(emitter, buffer) {}`. This can be passed to a serial reader such as serialport
+. Note that XBeeAPI will not use the emitter to emit a parsed frame, but it&#x27;s own emitter (see Event: &#x27;frame_object&#x27
+;).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api.XBeeAPI.prototype.escape" id="apidoc.element.xbee-api.XBeeAPI.prototype.escape">
+        function <span class="apidocSignatureSpan">xbee-api.XBeeAPI.prototype.</span>escape
+        <span class="apidocSignatureSpan">(buffer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escape = function (buffer) {
+  if (this.escapeBuffer === undefined)
+    this.escapeBuffer = Buffer.alloc(512);
+
+  var offset = 0;
+  this.escapeBuffer.writeUInt8(buffer[0], offset++);
+  for (var i = 1; i &#x3c; buffer.length; i++) {
+    if (C.ESCAPE_BYTES.indexOf(buffer[i]) &#x3e; -1) {
+      this.escapeBuffer.writeUInt8(C.ESCAPE, offset++);
+      this.escapeBuffer.writeUInt8(buffer[i] ^ C.ESCAPE_WITH, offset++);
+    } else {
+      this.escapeBuffer.writeUInt8(buffer[i], offset++);
+    }
+  }
+
+  return Buffer.from(this.escapeBuffer.slice(0, offset));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api.XBeeAPI.prototype.nextFrameId" id="apidoc.element.xbee-api.XBeeAPI.prototype.nextFrameId">
+        function <span class="apidocSignatureSpan">xbee-api.XBeeAPI.prototype.</span>nextFrameId
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nextFrameId = function () {
+  return frame_builder.nextFrameId();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### xbeeAPI.parseRaw(buffer)
+Parses data in the buffer, assumes it is comming directly from the XBee. If a complete frame is collected, it is emitted as Event
+: &#x27;frame_object&#x27;.
+
+#### Event: &#x27;frame_object&#x27;
+Is emitted whenever a complete frame is collected and parsed.
+
+#### xbeeAPI.<span class="apidocCodeKeywordSpan">nextFrameId</span>()
+Increments the internal `frameId` counter and returns it. Useful for building requests where we want to identify the respective
+response frame later on.
+
+### CREATING FRAMES FROM OBJECTS TO WRITE TO THE XBEE
+There are four basic requests we can make to the XBee of which two are essentially the same. We can make (queued) command requests
+ (0x08 and 0x09) and *remote* command request (0x17). These all behave pretty much the same as writing AT commands in AT mode. Lastly
+, there are transmit requests which can be used to send your own data to other devices (0x10, 0x00, 0x01 - depending on your firmware
+).
+
+Note that many parameters have default values. For example, `destination16/64` default to their unknown/broadcast values. For non
+-single-byte parameters, you can choose to pass a string (`&#x22;fffe&#x22;`) or a byte array (`[0xff, 0xfe]`). We&#x27;d expect
+ the latter to be slightly faster (but no benchmarks have been made).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api.XBeeAPI.prototype.parseFrame" id="apidoc.element.xbee-api.XBeeAPI.prototype.parseFrame">
+        function <span class="apidocSignatureSpan">xbee-api.XBeeAPI.prototype.</span>parseFrame
+        <span class="apidocSignatureSpan">(rawFrame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseFrame = function (rawFrame) {
+  // Trim the header and trailing checksum
+  var reader = new BufferReader(rawFrame.slice(3, rawFrame.length -1));
+
+  var frame = {
+    type: reader.nextUInt8() // Read Frame Type
+  };
+
+  // Frame type specific parsing.
+  frame_parser[frame.type](frame, reader, this.options);
+
+  return frame;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Something we might receive from an XBee...
+var raw_frame = new Buffer([
+	0x7E, 0x00, 0x13, 0x97, 0x55, 0x00, 0x13, 0xA2, 0x00, 0x40, 0x52, 0x2B,
+	0xAA, 0x7D, 0x84, 0x53, 0x4C, 0x00, 0x40, 0x52, 0x2B, 0xAA, 0xF0
+]);
+
+console.log(xbeeAPI.<span class="apidocCodeKeywordSpan">parseFrame</span>(raw_frame));
+// { type: 151,
+//   id: 85,
+//   remote64: &#x27;0013a20040522baa&#x27;,
+//   remote16: &#x27;7d84&#x27;,
+//   command: &#x27;SL&#x27;,
+//   commandStatus: 0,
+//   commandData: [ 64, 82, 43, 170 ] }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api.XBeeAPI.prototype.parseRaw" id="apidoc.element.xbee-api.XBeeAPI.prototype.parseRaw">
+        function <span class="apidocSignatureSpan">xbee-api.XBeeAPI.prototype.</span>parseRaw
+        <span class="apidocSignatureSpan">(buffer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseRaw = function (buffer) {
+  var S = this.parseState;
+  for(var i = 0; i &#x3c; buffer.length; i++) {
+    S.b = buffer[i];
+    if (S.b === C.START_BYTE) {
+      S.buffer = Buffer.alloc(128);
+      S.length = 0;
+      S.total = 0;
+      S.checksum = 0x00;
+      S.offset = 0;
+      S.escape_next = false;
+      S.waiting = false;
+    }
+
+    if (this.options.api_mode === 2 &#x26;&#x26; S.b === C.ESCAPE) {
+      S.escape_next = true;
+      continue;
+    }
+
+    if (S.escape_next) {
+      S.b = 0x20 ^ S.b;
+      S.escape_next = false;
+    }
+
+    if (!S.waiting) {
+        if (S.buffer.length &#x3e; S.offset) {
+          S.buffer.writeUInt8(S.b, S.offset++);
+        } else {
+            console.log(&#x22;We would have a problem...&#x22;);
+            S.waiting = true;
+        }
+    }
+
+    if (S.offset === 1) {
+      continue;
+    }
+
+    if (S.offset === 2) {
+      S.length  = S.b &#x3c;&#x3c; 8; // most sign. bit of the length
+      continue;
+    }
+    if (S.offset === 3) {
+      S.length += S.b;     // least sign. bit of the length
+      continue;
+    }
+
+    if (S.offset &#x3e; 3) { // unnessary check
+      if (S.offset &#x3c; S.length+4) {
+        S.total += S.b;
+        continue;
+      } else {
+        S.checksum = S.b;
+      }
+    }
+
+    if (S.length &#x3e; 0 &#x26;&#x26; S.offset === S.length + 4) {
+      if (S.checksum !== (255 - (S.total % 256))) {
+        var err = new Error(&#x22;Checksum Mismatch &#x22; + JSON.stringify(S));
+        this.emit(&#x27;error&#x27;, err);
+      }
+
+      var rawFrame = S.buffer.slice(0, S.offset);
+      if (this.options.raw_frames || !this.canParse(rawFrame)) {
+        this.emit(&#x22;frame_raw&#x22;, rawFrame);
+      } else {
+        var frame = this.parseFrame(rawFrame);
+        this.emit(&#x22;frame_object&#x22;, frame);
+      }
+
+      // Reset some things so we don&#x27;t try to reeimt the same package if there is more (bogus?) data
+      S.waiting = true;
+      S.length = 0;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### xbeeAPI.parseFrame(buffer)
+Parses and returns a frame object from the buffer passed. Note that the buffer must be a complete frame, starting with the start
+ byte and ending with the checksum byte. See ***Objects created from received API Frames*** for details on how the retured objects
+ are specified.
+
+#### xbeeAPI.rawParser()
+Returns a parser function with the profile `function(emitter, buffer) {}`. This can be passed to a serial reader such as serialport
+. Note that XBeeAPI will not use the emitter to emit a parsed frame, but it&#x27;s own emitter (see Event: &#x27;frame_object&#x27
+;).
+
+#### xbeeAPI.<span class="apidocCodeKeywordSpan">parseRaw</span>(buffer)
+Parses data in the buffer, assumes it is comming directly from the XBee. If a complete frame is collected, it is emitted as Event
+: &#x27;frame_object&#x27;.
+
+#### Event: &#x27;frame_object&#x27;
+Is emitted whenever a complete frame is collected and parsed.
+
+#### xbeeAPI.nextFrameId()
+Increments the internal `frameId` counter and returns it. Useful for building requests where we want to identify the respective
+response frame later on.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api.XBeeAPI.prototype.rawParser" id="apidoc.element.xbee-api.XBeeAPI.prototype.rawParser">
+        function <span class="apidocSignatureSpan">xbee-api.XBeeAPI.prototype.</span>rawParser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rawParser = function () {
+  return function(emitter, buffer) {
+    this.parseRaw(buffer);
+  }.bind(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### xbeeAPI.canParse(buffer)
+Returns whether the library implements a parser for the frame contained in the provided buffer. The buffer only needs to contain
+ up to the frame type segment to determine if it can be parsed, but `parseFrame()` will need a complete frame.
+
+#### xbeeAPI.parseFrame(buffer)
+Parses and returns a frame object from the buffer passed. Note that the buffer must be a complete frame, starting with the start
+ byte and ending with the checksum byte. See ***Objects created from received API Frames*** for details on how the retured objects
+ are specified.
+
+#### xbeeAPI.<span class="apidocCodeKeywordSpan">rawParser</span>()
+Returns a parser function with the profile `function(emitter, buffer) {}`. This can be passed to a serial reader such as serialport
+. Note that XBeeAPI will not use the emitter to emit a parsed frame, but it&#x27;s own emitter (see Event: &#x27;frame_object&#x27
+;).
+
+#### xbeeAPI.parseRaw(buffer)
+Parses data in the buffer, assumes it is comming directly from the XBee. If a complete frame is collected, it is emitted as Event
+: &#x27;frame_object&#x27;.
+
+#### Event: &#x27;frame_object&#x27;
+Is emitted whenever a complete frame is collected and parsed.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xbee-api._frame_builder" id="apidoc.module.xbee-api._frame_builder">module xbee-api._frame_builder</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_builder.0" id="apidoc.element.xbee-api._frame_builder.0">
+        function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>0
+        <span class="apidocSignatureSpan">(frame, builder)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">0 = function (frame, builder) {
+  builder.appendUInt8(frame.type);
+  builder.appendUInt8(this.getFrameId(frame));
+  builder.appendString(frame.destination64 || C.UNKNOWN_64, &#x27;hex&#x27;);
+  builder.appendUInt8(frame.options || 0x00);
+  appendData(frame.data, builder);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_builder.1" id="apidoc.element.xbee-api._frame_builder.1">
+        function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>1
+        <span class="apidocSignatureSpan">(frame, builder)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">1 = function (frame, builder) {
+  builder.appendUInt8(frame.type);
+  builder.appendUInt8(this.getFrameId(frame));
+  builder.appendString(frame.destination16 || C.BROADCAST_16_XB, &#x27;hex&#x27;);
+  builder.appendUInt8(frame.options || 0x00);
+  appendData(frame.data, builder);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_builder.16" id="apidoc.element.xbee-api._frame_builder.16">
+        function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>16
+        <span class="apidocSignatureSpan">(frame, builder)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">16 = function (frame, builder) {
+  builder.appendUInt8(frame.type);
+  builder.appendUInt8(this.getFrameId(frame));
+  builder.appendString(frame.destination64 || C.UNKNOWN_64, &#x27;hex&#x27;);
+  builder.appendString(frame.destination16 || C.UNKNOWN_16, &#x27;hex&#x27;);
+  builder.appendUInt8(frame.broadcastRadius || 0x00);
+  builder.appendUInt8(frame.options || 0x00);
+  appendData(frame.data, builder);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_builder.17" id="apidoc.element.xbee-api._frame_builder.17">
+        function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>17
+        <span class="apidocSignatureSpan">(frame, builder)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">17 = function (frame, builder) {
+  builder.appendUInt8(frame.type);
+  builder.appendUInt8(this.getFrameId(frame));
+  builder.appendString(frame.destination64 || C.UNKNOWN_64, &#x27;hex&#x27;);
+  builder.appendString(frame.destination16 || C.UNKNOWN_16, &#x27;hex&#x27;);
+  builder.appendUInt8(frame.sourceEndpoint);
+  builder.appendUInt8(frame.destinationEndpoint);
+
+  if (typeof(frame.clusterId) === &#x27;number&#x27;) {
+	  builder.appendUInt16BE(frame.clusterId, &#x27;hex&#x27;);
+  } else {
+	  builder.appendString(frame.clusterId, &#x27;hex&#x27;);
+  }
+
+  if (typeof(frame.profileId) === &#x27;number&#x27;) {
+	  builder.appendUInt16BE(frame.profileId, &#x27;hex&#x27;);
+  } else {
+	  builder.appendString(frame.profileId, &#x27;hex&#x27;);
+  }
+
+  builder.appendUInt8(frame.broadcastRadius || 0x00);
+  builder.appendUInt8(frame.options || 0x00);
+  appendData(frame.data, builder);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_builder.23" id="apidoc.element.xbee-api._frame_builder.23">
+        function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>23
+        <span class="apidocSignatureSpan">(frame, builder)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">23 = function (frame, builder) {
+  builder.appendUInt8(frame.type);
+  builder.appendUInt8(this.getFrameId(frame));
+  builder.appendString(frame.destination64 || C.UNKNOWN_64, &#x27;hex&#x27;);
+  builder.appendString(frame.destination16 || C.UNKNOWN_16, &#x27;hex&#x27;);
+  builder.appendUInt8(frame.remoteCommandOptions || 0x02);
+  builder.appendString(frame.command, &#x27;ascii&#x27;);
+  appendData(frame.commandParameter, builder);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_builder.33" id="apidoc.element.xbee-api._frame_builder.33">
+        function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>33
+        <span class="apidocSignatureSpan">(frame, builder)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">33 = function (frame, builder) {
+  builder.appendUInt8(frame.type);
+  builder.appendUInt8(0); // Frame ID is always zero for this
+  builder.appendString(frame.destination64, &#x27;hex&#x27;);
+  builder.appendString(frame.destination16, &#x27;hex&#x27;);
+  builder.appendUInt8(0); // Route command options always zero
+  builder.appendUInt8(frame.addresses.length); // Number of hops
+  for (var i = 0; i &#x3c; frame.addresses.length; i++) {
+    builder.appendUInt16BE(frame.addresses[i], &#x27;hex&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_builder.8" id="apidoc.element.xbee-api._frame_builder.8">
+        function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>8
+        <span class="apidocSignatureSpan">(frame, builder)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">8 = function (frame, builder) {
+  builder.appendUInt8(frame.type);
+  builder.appendUInt8(this.getFrameId(frame));
+  builder.appendString(frame.command, &#x27;ascii&#x27;);
+  appendData(frame.commandParameter, builder);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_builder.9" id="apidoc.element.xbee-api._frame_builder.9">
+        function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>9
+        <span class="apidocSignatureSpan">(frame, builder)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">9 = function (frame, builder) {
+  builder.appendUInt8(frame.type);
+  builder.appendUInt8(this.getFrameId(frame));
+  builder.appendString(frame.command, &#x27;ascii&#x27;);
+  appendData(frame.commandParameter, builder);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_builder.getFrameId" id="apidoc.element.xbee-api._frame_builder.getFrameId">
+        function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>getFrameId
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getFrameId(frame) {
+  assert(frame, &#x27;Frame parameter must be supplied&#x27;);
+  var id = frame.id || (frame.id !== 0 &#x26;&#x26; this.nextFrameId()) || frame.id;
+  return frame.id = id;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_builder.nextFrameId" id="apidoc.element.xbee-api._frame_builder.nextFrameId">
+        function <span class="apidocSignatureSpan">xbee-api._frame_builder.</span>nextFrameId
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function nextFrameId() {
+  this.frameId = this.frameId &#x3e;= 0xff ? 1 : ++this.frameId;
+  return this.frameId;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### xbeeAPI.parseRaw(buffer)
+Parses data in the buffer, assumes it is comming directly from the XBee. If a complete frame is collected, it is emitted as Event
+: &#x27;frame_object&#x27;.
+
+#### Event: &#x27;frame_object&#x27;
+Is emitted whenever a complete frame is collected and parsed.
+
+#### xbeeAPI.<span class="apidocCodeKeywordSpan">nextFrameId</span>()
+Increments the internal `frameId` counter and returns it. Useful for building requests where we want to identify the respective
+response frame later on.
+
+### CREATING FRAMES FROM OBJECTS TO WRITE TO THE XBEE
+There are four basic requests we can make to the XBee of which two are essentially the same. We can make (queued) command requests
+ (0x08 and 0x09) and *remote* command request (0x17). These all behave pretty much the same as writing AT commands in AT mode. Lastly
+, there are transmit requests which can be used to send your own data to other devices (0x10, 0x00, 0x01 - depending on your firmware
+).
+
+Note that many parameters have default values. For example, `destination16/64` default to their unknown/broadcast values. For non
+-single-byte parameters, you can choose to pass a string (`&#x22;fffe&#x22;`) or a byte array (`[0xff, 0xfe]`). We&#x27;d expect
+ the latter to be slightly faster (but no benchmarks have been made).
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xbee-api._frame_parser" id="apidoc.module.xbee-api._frame_parser">module xbee-api._frame_parser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.0" id="apidoc.element.xbee-api._frame_parser.0">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>0
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">0 = function (frame, reader, options) {
+  frame.id = reader.nextUInt8();
+  frame.destination64 = reader.nextString(8, &#x27;hex&#x27;);
+  frame.options = reader.nextUInt8();
+  frame.data = reader.nextAll();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.1" id="apidoc.element.xbee-api._frame_parser.1">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>1
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">1 = function (frame, reader, options) {
+  frame.id = reader.nextUInt8();
+  frame.destination16 = reader.nextString(2, &#x27;hex&#x27;);
+  frame.options = reader.nextUInt8();
+  frame.data = reader.nextAll();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.128" id="apidoc.element.xbee-api._frame_parser.128">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>128
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">128 = function (frame, reader, options) {
+  frame.remote64 = reader.nextString(8, &#x27;hex&#x27;);
+  frame.rssi = reader.nextUInt8();
+  frame.receiveOptions = reader.nextUInt8();
+  frame.data = reader.nextAll();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.129" id="apidoc.element.xbee-api._frame_parser.129">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>129
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">129 = function (frame, reader, options) {
+  frame.remote16 = reader.nextString(2, &#x27;hex&#x27;);
+  frame.rssi = reader.nextUInt8();
+  frame.receiveOptions = reader.nextUInt8();
+  frame.data = reader.nextAll();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.130" id="apidoc.element.xbee-api._frame_parser.130">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>130
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">130 = function (frame, reader, options) {
+  frame.remote64 = reader.nextString(8, &#x27;hex&#x27;);
+  frame.rssi = reader.nextUInt8();
+  frame.receiveOptions = reader.nextUInt8();
+  frame.data = reader.nextAll();
+  // TODO: Parse I/O Data?
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.131" id="apidoc.element.xbee-api._frame_parser.131">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>131
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">131 = function (frame, reader, options) {
+  frame.remote16 = reader.nextString(2, &#x27;hex&#x27;);
+  frame.rssi = reader.nextUInt8();
+  frame.receiveOptions = reader.nextUInt8();
+  frame_parser.Recieved16BitPacketIO(frame, reader, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.136" id="apidoc.element.xbee-api._frame_parser.136">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>136
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">136 = function (frame, reader, options) {
+  frame.id = reader.nextUInt8();
+  frame.command = reader.nextString(2, &#x27;ascii&#x27;);
+  frame.commandStatus = reader.nextUInt8();
+  if ((frame.command === &#x22;ND&#x22;) &#x26;&#x26; (frame.commandStatus == C.COMMAND_STATUS.OK) &#x26;&#x26; (reader.buf.length &#x3e; reader.tell())) {
+    frame.nodeIdentification = {};
+    frame_parser.parseNodeIdentificationPayload(frame.nodeIdentification, reader);
+  } else {
+    frame.commandData = reader.nextAll();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.137" id="apidoc.element.xbee-api._frame_parser.137">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>137
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">137 = function (frame, reader, options) {
+  frame.id = reader.nextUInt8();
+  frame.deliveryStatus = reader.nextUInt8();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.138" id="apidoc.element.xbee-api._frame_parser.138">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>138
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">138 = function (frame, reader, options) {
+  frame.modemStatus = reader.nextUInt8();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.139" id="apidoc.element.xbee-api._frame_parser.139">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>139
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">139 = function (frame, reader, options) {
+  frame.id = reader.nextUInt8();
+  frame.remote16 = reader.nextString(2, &#x27;hex&#x27;);
+  frame.transmitRetryCount = reader.nextUInt8();
+  frame.deliveryStatus = reader.nextUInt8();
+  frame.discoveryStatus = reader.nextUInt8();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.144" id="apidoc.element.xbee-api._frame_parser.144">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>144
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">144 = function (frame, reader, options) {
+  frame.remote64 = reader.nextString(8, &#x27;hex&#x27;);
+  frame.remote16 = reader.nextString(2, &#x27;hex&#x27;);
+  frame.receiveOptions = reader.nextUInt8();
+  frame.data = reader.nextAll();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.145" id="apidoc.element.xbee-api._frame_parser.145">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>145
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">145 = function (frame, reader, options) {
+  frame.remote64 = reader.nextString(8, &#x27;hex&#x27;);
+  frame.remote16 = reader.nextString(2, &#x27;hex&#x27;);
+  frame.sourceEndpoint = reader.nextString(1, &#x27;hex&#x27;);
+  frame.destinationEndpoint = reader.nextString(1, &#x27;hex&#x27;);
+  frame.clusterId = reader.nextString(2, &#x27;hex&#x27;);
+  frame.profileId = reader.nextString(2, &#x27;hex&#x27;);
+  frame.receiveOptions = reader.nextUInt8();
+  frame.data = reader.nextAll();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.146" id="apidoc.element.xbee-api._frame_parser.146">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>146
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">146 = function (frame, reader, options) {
+  frame.remote64 = reader.nextString(8, &#x27;hex&#x27;);
+  frame.remote16 = reader.nextString(2, &#x27;hex&#x27;);
+  frame.receiveOptions = reader.nextUInt8();
+  frame_parser.ParseIOSamplePayload(frame, reader, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.148" id="apidoc.element.xbee-api._frame_parser.148">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>148
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">148 = function (frame, reader, options) {
+  frame.remote64 = reader.nextString(8, &#x27;hex&#x27;);
+  frame.remote16 = reader.nextString(2, &#x27;hex&#x27;);
+  frame.receiveOptions = reader.nextUInt8();
+  frame.sensors = reader.nextUInt8();
+  frame.sensorValues = {
+      AD0: Math.round(1000 * (reader.nextUInt16BE() * 5.1) / 255.0),
+      AD1: Math.round(1000 * (reader.nextUInt16BE() * 5.1) / 255.0),
+      AD2: Math.round(1000 * (reader.nextUInt16BE() * 5.1) / 255.0),
+      AD3: Math.round(1000 * (reader.nextUInt16BE() * 5.1) / 255.0),
+      T:   reader.nextUInt16BE(),
+      temperature: undefined,
+      relativeHumidity: undefined,
+      trueHumidity: undefined,
+      waterPresent: frame.sensors === 0x60
+  };
+
+  if (frame.sensors === 2 || frame.sensors === 3) {
+    if (frame.sensorValues.T &#x3c; 2048) {
+      frame.sensorValues.temperature = frame.sensorValues.T / 16;
+    } else {
+      frame.sensorValues.temperature = -(frame.sensorValues.T &#x26; 0x7ff) / 16;
+    }
+  }
+
+  if (frame.sensors === 1 || frame.sensors === 3) {
+    frame.sensorValues.relativeHumidity = Math.round(100 *
+        (((frame.sensorValues.AD3 / frame.sensorValues.AD2) -
+            0.16) / (0.0062))) / 100;
+  }
+
+  if (frame.sensors === 3) {
+    frame.sensorValues.trueHumidity = Math.round(100 *
+        (frame.sensorValues.relativeHumidity / (1.0546 -
+            (0.00216 * frame.sensorValues.temperature)))) / 100;
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.149" id="apidoc.element.xbee-api._frame_parser.149">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>149
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">149 = function (frame, reader, options) {
+  frame.sender64 = reader.nextString(8, &#x27;hex&#x27;);
+  frame.sender16 = reader.nextString(2, &#x27;hex&#x27;);
+  frame.receiveOptions = reader.nextUInt8();
+  frame_parser.parseNodeIdentificationPayload(frame, reader, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.151" id="apidoc.element.xbee-api._frame_parser.151">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>151
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">151 = function (frame, reader, options) {
+  frame.id = reader.nextUInt8();
+  frame.remote64 = reader.nextString(8, &#x27;hex&#x27;);
+  frame.remote16 = reader.nextString(2, &#x27;hex&#x27;);
+  frame.command = reader.nextString(2, &#x27;ascii&#x27;);
+  frame.commandStatus = reader.nextUInt8();
+  if(frame.command === &#x22;IS&#x22;) {
+    frame_parser.ParseIOSamplePayload(frame, reader, options);
+  } else if ((frame.command === &#x22;ND&#x22;) &#x26;&#x26; (frame.commandStatus == C.COMMAND_STATUS.OK)) {
+    frame.nodeIdentification = {};
+    frame_parser.parseNodeIdentificationPayload(frame.nodeIdentification, reader);
+  } else {
+    frame.commandData = reader.nextAll();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.16" id="apidoc.element.xbee-api._frame_parser.16">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>16
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">16 = function (frame, reader, options) {
+  frame.id = reader.nextUInt8();
+  frame.destination64 = reader.nextString(8, &#x27;hex&#x27;);
+  frame.destination16 = reader.nextString(2, &#x27;hex&#x27;);
+  frame.broadcastRadius = reader.nextUInt8();
+  frame.options = reader.nextUInt8();
+  frame.data = reader.nextAll();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.161" id="apidoc.element.xbee-api._frame_parser.161">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>161
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">161 = function (frame, reader, options) {
+  frame.remote64 = reader.nextString(8, &#x27;hex&#x27;);
+  frame.remote16 = reader.nextString(2, &#x27;hex&#x27;);
+  frame.receiveOptions = reader.nextUInt8();
+  frame.hopCount = reader.nextUInt8();
+  frame.addresses = [];
+  for (var i=0; i&#x3c;frame.hopCount; i++) {
+    frame.addresses.push(reader.nextUInt16BE());
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.17" id="apidoc.element.xbee-api._frame_parser.17">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>17
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">17 = function (frame, reader, options) {
+  frame.id = reader.nextUInt8();
+  frame.destination64 = reader.nextString(8, &#x27;hex&#x27;);
+  frame.destination16 = reader.nextString(2, &#x27;hex&#x27;);
+  frame.sourceEndpoint = reader.nextUInt8();
+  frame.destinationEndpoint = reader.nextUInt8();
+  frame.clusterId = reader.nextUInt16BE();
+  frame.profileId = reader.nextUInt16BE();
+  frame.broadcastRadius = reader.nextUInt8();
+  frame.options = reader.nextUInt8();
+  frame.data = reader.nextAll();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.23" id="apidoc.element.xbee-api._frame_parser.23">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>23
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">23 = function (frame, reader, options) {
+  frame.id = reader.nextUInt8();
+  frame.destination64 = reader.nextString(8, &#x27;hex&#x27;);
+  frame.destination16 = reader.nextString(2, &#x27;hex&#x27;);
+  frame.remoteCommandOptions = reader.nextUInt8();
+  frame.command = reader.nextString(2, &#x27;ascii&#x27;);
+  frame.commandParameter = reader.nextAll();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.8" id="apidoc.element.xbee-api._frame_parser.8">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>8
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">8 = function (frame, reader, options) {
+  frame.id = reader.nextUInt8();
+  frame.command = reader.nextString(2, &#x27;ascii&#x27;);
+  frame.commandParameter = reader.nextAll();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.9" id="apidoc.element.xbee-api._frame_parser.9">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>9
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">9 = function (frame, reader, options) {
+  frame.id = reader.nextUInt8();
+  frame.command = reader.nextString(2, &#x27;ascii&#x27;);
+  frame.commandParameter = reader.nextAll();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.ParseIOSamplePayload" id="apidoc.element.xbee-api._frame_parser.ParseIOSamplePayload">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>ParseIOSamplePayload
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ParseIOSamplePayload = function (frame, reader, options) {
+  frame.digitalSamples = {};
+  frame.analogSamples = {};
+  frame.numSamples = 0;
+  // When parsing responses to ATIS, there is no data to parse if IO lines are not enabled
+  if (frame.commandStatus !== undefined &#x26;&#x26; frame.commandStatus !== 0) return;
+  frame.numSamples = reader.nextUInt8();
+  var mskD = reader.nextUInt16BE();
+  var mskA = reader.nextUInt8();
+
+  if (mskD &#x3e; 0) {
+    var valD = reader.nextUInt16BE();
+    for (var dbit in C.DIGITAL_CHANNELS.MASK) {
+      if ((mskD &#x26; (1 &#x3c;&#x3c; dbit)) &#x3e;&#x3e; dbit) {
+        frame.digitalSamples[C.DIGITAL_CHANNELS.MASK[dbit][0]] = (valD &#x26; (1 &#x3c;&#x3c; dbit)) &#x3e;&#x3e; dbit;
+      }
+    }
+  }
+
+  if (mskA &#x3e; 0) {
+    for (var abit in C.ANALOG_CHANNELS.MASK) {
+      if ((mskA &#x26; (1 &#x3c;&#x3c; abit)) &#x3e;&#x3e; abit) {
+        var valA = reader.nextUInt16BE();
+
+        if (!options.convert_adc) {
+          frame.analogSamples[C.ANALOG_CHANNELS.MASK[abit][0]] = valA;
+        } else {
+        // Convert to mV, resolution is &#x3c; 1mV, so rounding is OK
+          frame.analogSamples[C.ANALOG_CHANNELS.MASK[abit][0]] = Math.round((valA * options.vref_adc) / 1023);
+        }
+      }
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.Recieved16BitPacketIO" id="apidoc.element.xbee-api._frame_parser.Recieved16BitPacketIO">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>Recieved16BitPacketIO
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Recieved16BitPacketIO = function (frame, reader, options) {
+  var hasDigital = 0;
+  var data = {};
+  // OFFSET 4
+ //reader.move(4);
+  data.sampleQuantity = reader.nextUInt8();
+  data.channelMask    = reader.nextUInt16BE();
+  data.channels       = {};
+  data.analogSamples  = [];
+  data.digitalSamples = [];
+
+  //analog channels
+  for( var a=0; a&#x3c;=5; a++ ){
+    // exponent looks odd here because analog pins start at 0000001000000000
+    if( Boolean(data.channelMask &#x26; Math.pow(2,a+9)) ){
+      data.channels[&#x27;ADC&#x27;+a] = 1;
+    }
+  }
+
+  // if any of the DIO pins are active, parse the digital samples
+  // 0x1ff = 0000000111111111
+  if(data.channelMask &#x26; 0x1ff){
+    hasDigital = 1;
+    for( var i=0; i &#x3c; data.sampleQuantity; i++ ){
+      data.digitalSamples.push( reader.nextUInt16BE().toString(2) );
+    }
+
+    //digital channels
+    for( var d=0; d&#x3c;=8; d++ ){
+      if( Boolean(data.channelMask &#x26; Math.pow(2,d)) ){
+        data.channels[&#x27;DIO&#x27;+d] = 1;
+      }
+    }
+  }
+
+  for( var si=0; si &#x3c; data.sampleQuantity; si++ ){
+    var sample = {};
+    for( var j=0; j &#x3c;= 5; j++ ){
+      if( data.channels[&#x27;ADC&#x27;+j] ){
+        // starts at the 7th byte and moved down by the Digital Samples section
+        sample[&#x27;ADC&#x27;+j] = reader.nextUInt16BE();
+      }
+    }
+    data.analogSamples.push(sample);
+  }
+
+  frame.data = data;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xbee-api._frame_parser.parseNodeIdentificationPayload" id="apidoc.element.xbee-api._frame_parser.parseNodeIdentificationPayload">
+        function <span class="apidocSignatureSpan">xbee-api._frame_parser.</span>parseNodeIdentificationPayload
+        <span class="apidocSignatureSpan">(frame, reader, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseNodeIdentificationPayload = function (frame, reader, options) {
+  frame.remote16 = reader.nextString(2, &#x27;hex&#x27;);
+  frame.remote64 = reader.nextString(8, &#x27;hex&#x27;);
+
+  // Extract the NI string from the buffer
+  frame.nodeIdentifier = reader.nextStringZero(&#x27;ascii&#x27;);
+
+  if(reader.buf.length &#x3e; reader.tell()) {
+    frame.remoteParent16 = reader.nextString(2, &#x27;hex&#x27;);
+    frame.deviceType = reader.nextUInt8();
+    frame.sourceEvent = reader.nextUInt8();
+    frame.digiProfileID = reader.nextString(2, &#x27;hex&#x27;);
+    frame.digiManufacturerID = reader.nextString(2, &#x27;hex&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
